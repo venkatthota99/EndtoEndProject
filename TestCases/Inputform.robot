@@ -1,15 +1,18 @@
 *** Settings ***
 Library     SeleniumLibrary
 Resource    ../Resources/InputformKeywords.robot
+Resource    ../Resources/SharedKeywords.robot
 
 *** Variables ***
-${url}      https://www.seleniumeasy.com/test/basic-first-form-demo.html
-${Browser}       chrome
+
+
 ${Message}      "How are you Automation"
 
 *** Test Cases ***
 InputformTC1
     Open My Browser     ${url}      ${Browser}
+    ClickInputForm
+    ClickSimpleForm
     Enter Message       ${Message}
     Show Message
     Sleep    3 Seconds
